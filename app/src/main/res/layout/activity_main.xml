@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.hackingbuzz.hikinggpslocator.MainActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@mipmap/back"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:textColor="#000000"
+        android:textSize="40dp"
+        android:text="Hicker's Tool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:textColor="#000000"
+        android:textSize="10dp"
+        android:text="Latitute: 55.77"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_toStartOf="@+id/textView"
+        android:layout_marginTop="35dp"
+        android:id="@+id/latitude" />
+
+    <TextView
+        android:textSize="10dp"
+        android:textColor="#000000"
+        android:text="Longetitude: 44.66 "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/latitude"
+        android:layout_alignStart="@+id/latitude"
+        android:layout_marginTop="15dp"
+        android:id="@+id/longitude" />
+
+    <TextView
+        android:textSize="10dp"
+        android:textColor="#000000"
+        android:text="Accuracy: 20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/longitude"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/accuracy" />
+
+    <TextView
+        android:textSize="10dp"
+        android:textColor="#000000"
+        android:text="Altitude: 23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accuracy"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:id="@+id/altitude" />
+
+    <TextView
+        android:textSize="10dp"
+        android:textColor="#000000"
+        android:text="Address: \n123 street no \nlocality \nCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/altitude"
+        android:layout_alignEnd="@+id/altitude"
+        android:layout_marginTop="23dp"
+        android:id="@+id/address" />
+
+</RelativeLayout>
