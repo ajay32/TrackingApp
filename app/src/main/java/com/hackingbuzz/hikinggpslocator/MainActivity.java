@@ -9,6 +9,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -32,6 +33,21 @@ public class MainActivity extends AppCompatActivity {
     Location location;  // object for storing last known location..
 
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if(requestCode == 1) {
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+            }
+
+
+            }
+            }
+
+
 
     public void updateLocationInfo(Location location) {                                              //we shoud always take a seperate method for processing..n we taking it coz..hum more than one jagah se location update kar rahe hai..listener se and lastKnownLocation se..so ek method main sara kaam two time nai likna padega
      //   Log.i("placeinfo",location.toString());
@@ -50,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(listAddress != null && listAddress.size() >0) { // means it has atleast one element  // nested if..if this condition not fullfil..interal if statement will not work
 
-            address = " ";
+
             if (listAddress.get(0).getSubThoroughfare() != null) {
                 address += listAddress.get(0).getSubThoroughfare() + "\n";   //subThorughfare means subStreet
             }
